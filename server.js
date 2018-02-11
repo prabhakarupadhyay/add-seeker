@@ -4,7 +4,7 @@ var request = require('request');
 //var cors = require('cors')//cors refers to cross origin resourse sharing,
 //it helps in enabling the resourses that r not usually shared or accessable by sites on the server side
 //var cook = request.cookie("fff");
-var mime = require('mime');
+var mime = require('mime-types');
 var path = require('path');
 var events = require('events');
 var mysql = require('mysql');
@@ -97,7 +97,7 @@ console.log(req.url);
  var filepath='./';
  
     if(req.url == '/'){
-    var abspath = filepath + 'public/signup.html';
+    var abspath = filepath + 'public/index.html';
 
     fileRead(res,req,abspath);
     }

@@ -14,7 +14,7 @@
       "mysql":"*",
       "request":"*",
       "passport-google-oauth":"*",
-      "mime":"*",
+      "mime-types":"*",
       "path":"*"
   },
   "engine": {
