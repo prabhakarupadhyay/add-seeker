@@ -1,0 +1,819 @@
+<!doctype html>
+<html lang="en" itemscope itemtype="http://schema.org/Article">
+<head>
+    <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="google-signin-client_id" content="28238042876-g9ogpu6l7ctpqg5rehe87mpbf5l7cahc.apps.googleusercontent.com">
+  <script src="https://apis.google.com/js/platform.js" async defer></script>  
+    
+    
+    <h1 id="headImage"><img id="mainHeadImage" src="logo2.png" alt="could not upload" height="150" width="500" ></h1>
+    <title>Ad Seeker</title>
+    <!--<link href="client.css" type="text/css" rel="stylesheet" -->
+    <style>
+        body{
+
+height:auto;
+width:auto;
+overflow-y: visible;
+    background: -webkit-linear-gradient(#437c17,#347235,#437c17,#347235);
+    background: -moz-linear-gradient(#437c17,#347235,#437c17,#347235);
+    background: -o-linear-gradient(#437c17,#347235,#437c17,#347235);
+
+}
+
+#mainBody{
+
+height:auto;
+width:auto;
+
+}
+
+
+
+#headImage{
+ text-align: center;
+background: -webkit-linear-gradient(#437c17,#437c17, #333);
+background: -moz-linear-gradient(#437c17,#437c17, #333);
+background: -o-linear-gradient(#437c17,#437c17, #333);
+
+border-right: 5px double rgb(70,70,82);
+border-bottom: 5px double rgb(70,70,82);
+margin-top:-7px; 
+margin-left: -20px;
+padding-bottom: 0px;
+width:auto;height:auto; 
+overflow:hidden; 
+margin-right: -8px;
+
+}
+
+.addImage{
+
+width: 100px;
+    height: 100px;
+    margin-left: 50px;
+
+}
+table{
+
+    border-spacing: 2em;
+  width: auto;
+  margin-left: -50px;
+  margin-top: -50px;
+ 
+   
+}
+tr{
+
+}
+
+td{
+font-size: 20px ;
+  text-align:center; 
+    vertical-align:middle;
+}
+
+.secData{
+
+font-family: Georgia, serif; 
+font-size: 25px;
+color:black;
+font-weight: 500;
+text-decoration: underline ;
+
+}
+
+ 
+#mainheadImage{
+
+margin-top: -20px;
+
+}
+
+
+
+div[class]:nth-child(odd){
+
+
+}
+
+
+div[class]:nth-child(even){
+
+
+}
+
+#activity{
+    
+font-family: sans-serif,serif;
+font-size: large;
+letter-spacing: 2px;
+text-align: right;
+position: relative;
+top: -60px;
+right: 60px;
+color: lightblue;
+z-index: -1;
+    
+}
+th{
+    
+font-family: serif;
+font-size: larger;
+text-decoration: underline;
+  text-align:center; 
+    vertical-align:middle;
+}
+
+#liveServerRefresh,#liveComRefresh{
+    
+    border: solid 2px black;
+    text-decoration:none;
+    cursor:pointer;
+}
+
+#liveComRefresh:hover{
+    
+      border: solid 2px darkgreen;
+    
+}
+
+
+#liveServerRefresh:hover{
+    
+      border: solid 2px darkgreen;
+    
+}
+        
+        
+    </style>
+</head>
+<body>   
+    
+    
+    
+    
+    
+    
+<div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+    
+<a href="http://nodejs-adseeker.rhcloud.com" onclick="signOut();">Sign out</a>
+<script>
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
+</script>
+
+    
+   <div id="signinData"></div>   
+    <div id="mainBody">
+      <div id = 'activity'>ACTIVITY<br><p id="notice" style="color:black">(No Activity)</p></div>  
+  <table>
+     <tr>
+        <td></td>
+        <td></td>
+        <td><div id="liveServerRefresh">REFRESH UPDATES</div></td>
+        <td><div id="liveComRefresh">REFRESH UPDATES</div></td>
+        <td></td>
+        
+    </tr>
+    <tr>
+        <th></th>
+        <th>SHOW NAME</th>
+        <th>LIVE CHANNEL UPDATE</th>
+        <th>OPEN COMMUNITY UPDATE</th>
+        <th>CLICK TO UPDATE</th>
+        
+    </tr>
+<tr>
+<td><img alt="could not upload" src="http://vignette3.wikia.nocookie.net/logopedia/images/c/c4/Mq1.jpg/revision/latest?cb=20130324235552" class="addImage"></td>
+   <td id="ZEENEWS" name = 'mainshow'>ZEE NEWS</td>
+ <td id ='zeenews' name='channel'>(SERVER)</td>
+ <td>
+    <div class="zeenews" id="yes" name ="channel2">people saying YES to ad- <span></span></div>
+    <br>
+    <div class="zeenews" id="no" name ="channel2">people saying NO to ad- <span></span></div>
+    
+ </td>
+ <td>
+    <div>
+    <button value="yes" name="zeenews">press for ads</button>
+    </div>
+    <br>
+    <div>
+	<button value="no" name="zeenews">press for no ads</button>
+    </div>
+    <br>
+    <div>
+	<button value="cancel" name="zeenews">cancel</button>
+    </div>
+ </td>
+</tr>
+    <tr>
+   <td> <img alt="could not upload" src="http://www.exchange4media.com/storyimages/fs_53828.jpg" class="addImage"></td>
+        <td id="INDIATV" name = 'mainshow'>INDIA TV</td>
+    <td id ='indiatv' name = 'channel'>(SERVER)</td>
+    <td>
+    <div class="indiatv" id="yes" name ="channel2">people saying YES to ad- <span></span></div>
+    <br>
+    <div class="indiatv" id="no" name ="channel2">people saying NO to ad- <span></span></div>
+	
+ </td>
+ <td>
+    <div>
+    <button value="yes" name="indiatv">press for ads</button>
+    </div>
+    <br>
+    <div>
+	<button value="no" name="indiatv">press for no ads</button>
+    </div>
+    <br>
+    <div>
+	<button value="cancel" name="indiatv">cancel</button>
+    </div>
+ </td>
+</tr>
+     <tr>
+    <td><img alt="could not upload" src="http://www.customercarephonenumber.in/wp-content/uploads/2013/02/Aaj-Tak-Logo.jpg" class="addImage"></td>
+         <td id="AAJTAK" name = 'mainshow'>AAJ TAK</td>
+  <td id ='aajtak' name ='channel'>(SERVER )</td>
+   <td>
+    <div class="aajtak" id="yes" name ="channel2">people saying YES to ad- <span></span></div>
+    <br>
+    <div class="aajtak" id="no" name ="channel2">people saying NO to ad- <span></span></div>
+	
+ </td>
+ <td>
+    <div>
+    <button value="yes" name="aajtak">press for ads</button>
+    </div>
+    <br>
+    <div>
+	<button value="no" name="aajtak">press for no ads</button>
+    </div>
+    <br>
+    <div>
+	<button value="cancel" name="aajtak">cancel</button>
+    </div>
+ </td>
+      </tr>
+         <tr>
+<td><img alt="could not upload" src="http://www.entertainmentdoor.com.pk/images/channel_image/thumb_150X150_colors-tv.jpg" class="addImage"></td>
+             <td id="COLORS" name = 'mainshow'>COLORS</td>
+   <td id ='colors' name ='channel'>(SERVER )</td>
+   <td>
+    <div class="colors" id="yes" name ="channel2">people saying YES to ad- <span></span></div>
+    <br>
+    <div class="colors" id="no" name ="channel2">people saying NO to ad- <span></span></div>
+	
+ </td>
+ <td>
+    <div>
+    <button value="yes" name="colors">press for ads</button>
+    </div>
+    <br>
+    <div>
+	<button value="no" name="colors">press for no ads</button>
+    </div>
+    <br>
+    <div>
+	<button value="cancel" name="colors">cancel</button>
+    </div>
+ </td>
+</tr>
+<tr>         
+    <td><img alt="could not upload" src="http://www.sammaconference.org/wp-content/uploads/2013/09/ZEE_TV_HD_Logo.jpg" class="addImage"></td>
+      <td id="ZEETV" name = 'mainshow'>ZEE TV</td>
+    <td id ='zeetv' name ='channel'>(SERVER)</td>
+     <td>
+    <div class="zeetv" id="yes" name ="channel2">people saying YES to ad- <span></span></div>
+    <br>
+    <div class="zeetv" id="no" name ="channel2">people saying NO to ad- <span></span></div>
+	
+ </td>
+ <td>
+    <div>
+    <button value="yes" name="zeetv">press for ads</button>
+    </div>
+    <br>
+    <div>
+	<button value="no" name="zeetv">press for no ads</button>
+    </div>
+    <br>
+    <div>
+	<button value="cancel" name="zeetv">cancel</button>
+    </div>
+ </td>
+    
+</tr>
+ <tr>
+    <td><img alt="could not upload" src="http://www.newtvworld.com/Images/Sony-tv-Live-Streaming.png" class="addImage"></td>
+     <td id="SONY" name = 'mainshow'>SONY</td>
+    <td id ='sony' name ='channel'>(SERVER)</td>
+        <td>
+    <div class="sony" id="yes" name ="channel2">people saying YES to ad- <span></span></div>
+    <br>
+    <div class="sony" id="no" name ="channel2">people saying NO to ad- <span></span></div>
+	
+ </td>
+ <td>
+    <div>
+    <button value="yes" name="sony">press for ads</button>
+    </div>
+    <br>
+    <div>
+	<button value="no" name="sony">press for no ads</button>
+    </div>
+    <br>
+    <div>
+	<button value="cancel" name="sony">cancel</button>
+    </div>
+ </td>
+</tr>
+      <tr>
+          <td><img alt="could not upload" src="https://www.digitalworldz.co.uk/attachment.php?attachmentid=67170&stc=1&thumb=1&d=1390413998.png" class="addImage"></td><td id="STARPLUS" name = 'mainshow'>STAR PLUS</td>
+   <td id ='starplus' name ='channel'>(SERVER)</td>
+       <td>
+    <div class="starplus" id="yes" name ="channel2">people saying YES to ad- <span></span></div>
+    <br>
+    <div class="starplus" id="no" name ="channel2">people saying NO to ad- <span></span></div>
+	
+ </td>
+ <td>
+    <div>
+    <button value="yes" name="starplus">press for ads</button>
+    </div>
+    <br>
+    <div>
+	<button value="no" name="starplus">press for no ads</button>
+    </div>
+    <br>
+    <div>
+	<button value="cancel" name="starplus">cancel</button>
+    </div>
+ </td>
+</tr>
+    <tr>
+    <td><img alt="could not upload" src="http://www.afaqs.com/all/news/images/news_story_grfx/2015/01/43075/&TV%20Logo.jpg" class="addImage"></td><td id="ANDTV" name = 'mainshow'>& TV</td>
+    <td id ='&tv' name ='channel'>(SERVER)</td>
+           <td>
+    <div class="andtv" id="yes" name ="channel2">people saying YES to ad- <span></span></div>
+    <br>
+    <div class="andtv" id="no" name ="channel2">people saying NO to ad- <span></span></div>
+	
+ </td>
+ <td>
+    <div>
+    <button value="yes" name="andtv">press for ads</button>
+    </div>
+    <br>
+    <div>
+	<button value="no" name="andtv">press for no ads</button>
+    </div>
+    <br>
+    <div>
+	<button value="cancel" name="andtv">cancel</button>
+    </div>
+ </td>
+</tr> 
+    <tr>
+    <td><img alt="could not upload" src="http://2.bp.blogspot.com/--TaPkh2mLH8/U0aEe_ABm3I/AAAAAAAACR4/xQWcXJbqB1Y/s1600/hbo_comedy_ceu.png" class="addImage"></td><td id="STARMOVIES" name = 'mainshow'>STAR MOVIES</td>
+    <td id ='starmovies' name ='channel'>(SERVER)</td>
+              <td>
+    <div class="starmovies" id="yes" name ="channel2">people saying YES to ad- <span></span></div>
+    <br>
+    <div class="starmovies" id="no" name ="channel2">people saying NO to ad- <span></span></div>
+	
+ </td>
+ <td>
+    <div>
+    <button value="yes" name="starmovies">press for ads</button>
+    </div>
+    <br>
+    <div>
+	<button value="no" name="starmovies">press for no ads</button>
+    </div>
+    <br>
+    <div>
+	<button value="cancel" name="starmovies">cancel</button>
+    </div>
+ </td>
+
+</tr>
+     <tr> 
+    <td><img alt="could not upload" src="https://www.homeboxoffice.com/lodging/img/hbo.jpg" class="addImage"></td><td id="HBO" name = 'mainshow'>HBO</td>
+   <td id ='hbo' name ='channel'>(SERVER)</td>
+                 <td>
+    <div class="hbo" id="yes" name ="channel2">people saying YES to ad- <span></span></div>
+    <br>
+    <div class="hbo" id="no" name ="channel2">people saying NO to ad- <span></span></div>
+	
+ </td>
+ <td>
+    <div>
+    <button value="yes" name="hbo">press for ads</button>
+    </div>
+    <br>
+    <div>
+	<button value="no" name="hbo">press for no ads</button>
+    </div>
+    <br>
+    <div>
+	<button value="cancel" name="hbo">cancel</button>
+    </div>
+ </td>
+
+</tr>
+<tr>
+    <td><img alt="could not upload" src="http://tvimages.burrp.com/images/channels2/movies/stargold.png" class="addImage"></td><td id="STARGOLD" name = 'mainshow'>STAR GOLD</td>
+  <td id ='stargold' name ='channel'>(SERVER)</td>
+  <td>
+    <div class="stargold" id="yes" name ="channel2">people saying YES to ad- <span></span></div>
+    <br>
+    <div class="stargold" id="no" name ="channel2">people saying NO to ad- <span></span></div>
+	
+ </td>
+ <td>
+    <div>
+    <button value="yes" name="stargold">press for ads</button>
+    </div>
+    <br>
+    <div>
+	<button value="no" name="stargold">press for no ads</button>
+    </div>
+    <br>
+    <div>
+	<button value="cancel" name="stargold">cancel</button>
+    </div>
+ </td>
+  
+</tr>
+    <tr>    
+   <td> <img alt="could not upload" src="http://www.newtvworld.com/Images/Movies-OK-logo-300x212.jpg" class="addImage"></td><td id="MOVIESOK" name = 'mainshow'>MOVIES OK</td>
+  <td id ='moviesok' name ='channel'>(SERVER )</td>
+   <td>
+    <div class="moviesok" id="yes" name ="channel2">people saying YES to ad- <span></span></div>
+    <br>
+    <div class="moviesok" id="no" name ="channel2">people saying NO to ad- <span></span></div>
+	
+ </td>
+ <td>
+    <div>
+    <button value="yes" name="moviesok">press for ads</button>
+    </div>
+    <br>
+    <div>
+	<button value="no" name="moviesok">press for no ads</button>
+    </div>
+    <br>
+    <div>
+	<button value="cancel" name="moviesok">cancel</button>
+    </div>
+ </td>
+  
+</tr> 
+ <tr>
+    <td><img alt="could not upload" src="http://tvimages.burrp.com/images/channels2/movies/&pictures.png" class="addImage"></td><td id="ANDPICTURES" name = 'mainshow'>& PICTURES</td>
+   <td id ='&pictures' name ='channel'>(SERVER)</td>
+   <td>
+    <div class="andpictures" id="yes" name ="channel2">people saying YES to ad- <span></span></div>
+    <br>
+    <div class="andpictures" id="no" name ="channel2">people saying NO to ad- <span></span></div>
+	
+ </td>
+ <td>
+    <div>
+    <button value="yes" name="andpictures">press for ads</button>
+    </div>
+    <br>
+    <div>
+	<button value="no" name="andpictures">press for no ads</button>
+    </div>
+    <br>
+    <div>
+	<button value="cancel" name="andpictures">cancel</button>
+    </div>
+ </td>
+</tr>  
+      </table> 
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+
+<footer id="foot">
+    <strong>
+         <script>
+             var bodyStyle = document.getElementById("mainBody");         
+             var foot=document.getElementById("foot");
+             var centre = bodyStyle.offsetWidth/2;
+             foot.style.marginLeft = centre-80 + 'px';
+             var date = new Date();
+             foot.innerHTML="copyright � "+ date.getFullYear()+" addseeker. ";
+        </script>
+    </strong>
+</footer>
+
+
+
+
+<br>
+
+</div>
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    
+<script>
+    
+    var warning = document.getElementById('notice');
+    var channel2 = document.getElementsByName('channel2');
+    var buttons = document.getElementsByTagName('button');
+  
+    var liveComRefresh = document.getElementById('liveComRefresh');
+    
+    var channelBox = new Array();
+    
+   
+  
+   
+    
+    var socket = io.connect();
+	
+    liveComRefresh.onclick = function(){
+    for(var j in channel2){
+    if(channel2[j].id == 'yes'){
+    channelBox.push(channel2[j].className);
+    
+    }
+    }
+         socket.emit('dataOnLoad',channelBox);
+           liveComRefresh.style.pointerEvents = 'none';
+            warning.innerHTML = '';
+           warning.innerHTML += 'Updating.Please Wait...';
+        };
+        
+        
+         
+          socket.on('dataOnLoad',function(smart){
+
+                var stringi = JSON.stringify(smart[0]);
+                var split1 = stringi.split(':');
+                var split2 = split1[1].split('}');
+                var addnumber = split2[0];
+                var addname = Object.getOwnPropertyNames(smart[0][0]);
+                var addvalue = smart[1];
+                //console.log('number of people saying '+ addvalue+ ' to add on ' +addname + '--'+addnumber);
+                
+                
+                 for(var i in channel2){
+                    
+        if(channel2[i].id == addvalue){
+        if(channel2[i].className == addname){
+           
+            channel2[i].innerHTML = '';
+            channel2[i].innerHTML += 'People saying '+ addvalue.toUpperCase()+ ' to Ad : '+addnumber;
+ 
+        }
+        }
+        
+    }
+    
+             warning.innerHTML = '';
+             warning.innerHTML += 'DONE REFRESH';
+             liveComRefresh.style.pointerEvents = 'auto';
+            });
+        
+        
+	socket.on('userInfo',function(result){
+	var name = result.userinfo;
+	console.log('-=-=-=-    '+name)
+	document.getElementById('signinData').innerHTML = '';
+        document.getElementById('signinData').innerHTML += 'WELCOME '+name;
+	});
+	
+	socket.on('message',function(result2){
+            
+                var stringi = JSON.stringify(result2[0]);
+                var split1 = stringi.split(':');
+                var split2 = split1[1].split('}');
+                var addnumber = split2[0];
+                var addname = Object.getOwnPropertyNames(result2[0][0]);
+                var addvalue = result2[1];
+                //console.log('number of people saying '+ addvalue+ ' to add on ' +addname + '--'+addnumber);
+                
+                
+                 for(var i in channel2){
+                    
+        if(channel2[i].id == addvalue){
+        if(channel2[i].className == addname){
+           
+            channel2[i].innerHTML = '';
+            channel2[i].innerHTML += 'People saying '+ addvalue.toUpperCase()+ ' to Ad : '+addnumber;
+ 
+        }
+        }
+        
+    } 
+    for(var i in buttons){
+        buttons[i].disabled = false;
+     }
+            console.log(result2.newsname+' updated '+result2.newsvalue);
+            
+            });
+        
+        socket.on('sameMessage',function(result3){
+            warning.innerHTML = '';
+             warning.innerHTML += result3.message;
+            console.log(result3.message);
+            for(var i in buttons){
+        buttons[i].disabled = false;
+     }
+            
+            });
+	
+        
+    var button = document.getElementsByTagName('input'); 
+    var xhr = new XMLHttpRequest();
+    var id;
+var channelName;
+var channelValue;
+var flag = false;
+
+function onSignIn(googleUser) {
+var id_token = googleUser.getAuthResponse().id_token;
+var xhr = new XMLHttpRequest();
+xhr.open('POST', 'http://nodejs-adseeker.rhcloud.com/tokensignin');
+xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+xhr.onload = function() {
+  console.log('Signed in as: ' + xhr.responseText);
+};
+xhr.send('idtoken=' + id_token);
+    
+  var profile = googleUser.getBasicProfile();
+  
+   id = profile.getId();
+   flag = true;
+socket.emit('initialize',{name:profile.getName()});
+
+}
+////
+ //socket.emit('initialize',{name:''});
+ 
+if(flag!=true){
+    
+document.onclick = function(evt){
+    if(evt.target.type == 'submit'){
+    channelName = evt.target.name;
+    channelValue = evt.target.value;
+    sendData(id,channelName,channelValue);
+};
+}
+}
+
+function sendData(cId,cName,cValue){
+ socket.emit('message',{realId:cId,newsName:cName,newsValue:cValue});
+   warning.innerHTML = '';
+     warning.innerHTML += 'Updating.Please Wait...';
+     for(var i in buttons){
+        buttons[i].disabled = true;
+     }
+   
+}
+
+/*
+//console.log(data)
+     var randomId = '64347869870854';
+      xhr.open('POST','27.0.0.1:8080/'+randomId,'true');
+       xhr.setRequestHeader("Content-Type", "plain/text;charset=UTF-8");
+    
+       xhr.onreadystatechange = function(){
+      if(xhr.status==200 && xhr.readyState==4){
+     console.log(xhr.responseText);
+     console.log('sucess');
+     
+    }    
+};
+
+    
+    xhr.send(data);
+ */   
+ 
+
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+<script>
+    
+ var socket = io.connect();
+      var liveServerRefresh = document.getElementById('liveServerRefresh');
+      var newsCollection = document.getElementsByName('mainshow');
+    socket.on('getRequest',function(res){
+  console.log('gogog')
+for(var i in newsCollection){
+if(newsCollection[i].id == res[0]){
+         
+    console.log(newsCollection[i].id);
+     console.log(res[1]);
+     newsCollection[i].innerHTML = '';
+     newsCollection[i].innerHTML += res[1];
+    
+}
+
+
+}
+   
+});
+      
+      
+       var es = new EventSource("/sse");
+
+    var data;
+        
+    var livechannels = document.getElementsByName('channel');
+  
+   
+    
+    es.onopen = function(event){  
+      console.log('event open ');
+    };
+    
+es.onmessage = function (event) {
+    data = event.data;
+  splitDataSearch(data,livechannels);
+};
+
+es.onerror = function(e) {
+  console.log("EventSource failed.");
+};
+
+ socket.on('liveServerRefresh',function(data){
+        splitDataSearch(data,livechannels);
+             warning.innerHTML = '';
+             warning.innerHTML += 'DONE REFRESH';
+              liveServerRefresh.style.pointerEvents = 'auto';
+        
+        });
+   
+     liveServerRefresh.onclick = function(){
+        socket.emit('liveServerRefresh');
+        liveServerRefresh.style.pointerEvents = 'none';
+            warning.innerHTML = '';
+           warning.innerHTML += 'Updating.Please Wait...';
+     }
+     
+    
+
+    
+   
+
+function splitDataSearch(data,livechannels){
+    
+  console.log(data);
+ var dataSplit = data.split('/');
+
+    for(var i=0; i<livechannels.length;i++){
+            
+    if(livechannels[i].id == dataSplit[0]) { 
+       publish(livechannels,i,dataSplit);
+}
+    }
+}
+    
+    
+     function publish(livechannels,i,dataSplit){
+    if(dataSplit[1]=='no'){
+        livechannels[i].innerHTML='';
+    livechannels[i].innerHTML +=dataSplit[2]+' - NO ADS';
+        livechannels[i].style.backgroundColor = '#00FF00';
+        livechannels[i].style.marginTop = '40px';
+         livechannels[i].style.display = "inline-block";
+       
+       
+    }
+        else if(dataSplit[1]=='yes'){
+           livechannels[i].innerHTML=''; 
+       livechannels[i].innerHTML +=dataSplit[2]+' - ADS'; 
+            livechannels[i].style.marginTop = '40px';
+              livechannels[i].style.backgroundColor = '#FF0000';
+            livechannels[i].style.display = "inline-block";
+        }
+        else{
+        livechannels[i].innerHTML=''; 
+       livechannels[i].innerHTML +=dataSplit[2]+' - NO UPDATE'; 
+             livechannels[i].style.backgroundColor = '';
+            livechannels[i].style.display = "";
+        
+        }
+   }
+    
+   
+</script>
+
+</body>
+</html>

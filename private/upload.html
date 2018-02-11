@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<style>
+
+body {
+
+margin-left:40px;
+background-color: lightblue;
+color: brown;
+
+}
+
+input[value = no] { 
+border: 7px solid green;
+ border-radius: 2;
+-webkit-appearance:none;
+-moz-appearance:none;
+-o-appearance:none;
+
+}
+input[value = yes] {
+
+border: 7px solid red;
+ border-radius: 2;
+-webkit-appearance:none;
+-moz-appearance:none;
+-o-appearance:none;
+
+}
+
+input[value = no update] {
+
+border: 7px dotted white;
+ border-radius: 2;
+-webkit-appearance:none;
+-moz-appearance:none;
+-o-appearance:none;
+
+}
+
+
+
+</style>
+    <title>Ad Seeker</title>
+</head>
+
+<body>
+<h1 style= 'text-align:center'>AD SEEKER</h1>
+<h1>NOTE:</h1>
+
+<div id ="info">
+<p>
+	select one to alter the live info on adseeker.com
+		1) click yes if ads are on.<br></br>
+	2)click no if ads are gone.<br></br>
+	3)click no update if you are gone.<br></br>
+	</p>
+	</div>
+	<br></br>
+<div id = 'result'></div>
+<br></br>
+<div id='formBody'>
+<form id='forms' method= 'post' name='forms'>
+    <div id="showName">    
+    <input type="text" id="showname" value='no show update'>type show
+    </div>
+    
+   <strong> zee news</strong>
+    <input type='radio' id='zeeNewsYes' name= 'zeenews' value='yes'>yes
+        <input type='radio' id='zeeNewsNo' name= 'zeenews' value='no'>no
+        <input type='radio' id='zeeNewsNoUpdate' name= 'zeenews' value='no update'>no update
+         <input type ='submit' name='submit' id='zeenews'>
+        <br><br>
+           <strong>  india tv</strong>
+            <input type='radio' id='indiaTvYes' name='indiatv' value='yes'>yes
+             <input type='radio' id='indiaTvNo' name='indiatv' value='no'>no
+             <input type='radio' id='indiaTvNoUpdate' name= 'indiatv' value='no update'>no update
+             <input type ='submit' name='submit' id='indiatv'>
+            <br> <br>
+             <strong>    aaj tak</strong>
+            <input type='radio' id='aajtakYes' name='aajtak' value='yes'>yes
+             <input type='radio' id='aajtakNo' name='aajtak' value='no'>no
+             <input type='radio' id='aajtakNoUpdate' name='aajtak' value='no update'>no update
+             <input type ='submit' name='submit' id='aajtak'>
+            <br> <br>
+             <strong>     colors</strong>
+            <input type='radio' id='colorsYes' name='colors' value='yes'>yes
+             <input type='radio' id='colorsNo' name='colors' value='no'>no
+             <input type='radio' id='colorsNoUpdate' name='colors' value='no update'>no update
+             <input type ='submit' name='submit' id='colors'>
+            <br> <br>
+              <strong>    zeetv</strong>
+            <input type='radio' id='zeetvYes' name='zeetv' value='yes'>yes
+             <input type='radio' id='zeetvNo' name='zeetv' value='no'>no
+             <input type='radio' id='zeetvNoUpdate' name='zeetv' value='no update'>no update
+             <input type ='submit' name='submit' id='zeetv'>
+            <br> <br>
+               <strong>   sony</strong>
+            <input type='radio' id='sonyYes' name='sony' value='yes'>yes
+             <input type='radio' id='sonyNo' name='sony' value='no'>no
+             <input type='radio' id='sonyNoUpdate' name='sony' value='no update'>no update
+             <input type ='submit' name='submit' id='sony'>
+            <br> <br>
+              <strong>   starplus</strong>
+            <input type='radio' id='starplusYes' name='starplus' value='yes'>yes
+             <input type='radio' id='starplusNo' name='starplus' value='no'>no
+             <input type='radio' id='starplusNoUpdate' name='starplus' value='no update'>no update
+             <input type ='submit' name='submit' id='starplus'>
+            <br> <br>
+              <strong>    &tv</strong>
+            <input type='radio' id=' &tvYes' name='&tv' value='yes'>yes
+             <input type='radio' id=' &tvNo' name='&tv' value='no'>no
+             <input type='radio' id=' &tvNoUpdate' name='&tv' value='no update'>no update
+             <input type ='submit' name='submit' id='&tv'>
+            <br> <br>
+              <strong>    starmovies</strong>
+            <input type='radio' id=' starmoviesYes' name='starmovies' value='yes'>yes
+             <input type='radio' id=' starmoviesNo' name='starmovies' value='no'>no
+             <input type='radio' id=' starmoviesNoUpdate' name='starmovies' value='no update'>no update
+             <input type ='submit' name='submit' id='starmovies'>
+            <br> <br>
+              <strong>     hbo</strong>
+            <input type='radio' id=' hboYes' name='hbo' value='yes'>yes
+             <input type='radio' id=' hboNo' name='hbo' value='no'>no
+             <input type='radio' id='hboNoUpdate' name='hbo' value='no update'>no update
+             <input type ='submit' name='submit' id='hbo'>
+            <br> <br>
+             <strong>    stargold</strong>
+            <input type='radio' id=' stargoldYes' name='stargold' value='yes'>yes
+             <input type='radio' id=' stargoldNo' name='stargold' value='no'>no
+             <input type='radio' id='stargoldNoUpdate' name='stargold' value='no update'>no update
+             <input type ='submit' name='submit' id='stargold'>
+            <br> <br>
+           <strong>  moviesok</strong>
+            <input type='radio' id=' moviesokYes' name='moviesok' value='yes'>yes
+             <input type='radio' id=' moviesokNo' name='moviesok' value='no'>no
+             <input type='radio' id='moviesokNoUpdate' name='moviesok' value='no update'>no update
+             <input type ='submit' name='submit' id='moviesok'>
+            <br>   <br>
+            <strong>&pictures</strong>
+            <input type='radio' id=' &picturesYes' name='&pictures' value='yes'>yes
+             <input type='radio' id='&picturesNo' name='&pictures' value='no'>no
+             <input type='radio' id='&picturesNoUpdate' name='&pictures' value='no update'>no update
+             <input type ='submit' name='submit' id='&pictures'>
+            <br>   <br> 
+             
+</form>
+</div>
+
+<script>
+
+var finalResult = document.getElementById('result');
+var showName = document.getElementById('showname');
+window.onload = function(){
+
+
+var xhr = new XMLHttpRequest();
+var formBody = document.getElementById("formBody");
+var form = document.getElementById('forms');
+
+ 
+    var input = document.createElement('input');
+    
+    input.setAttribute('type','reset');
+    input.setAttribute('id','reset');
+    form.appendChild(input);
+    var inputSubmits = new Array();
+    var inputElements = new Array();
+    var nodes = form.childNodes;
+var count=0;
+ var count2=0;  
+    var targeted;
+    
+      for(var j=0; j<nodes.length;j++){
+          if(nodes[j].nodeName == 'INPUT'){
+          inputElements[count] = j; 
+          count++;
+                
+          }
+          if(nodes[j].type == 'submit'){
+             
+          inputSubmits[count2]=j; 
+              count2++;
+          
+          }
+
+if(nodes[j].value == 'no'){
+
+		nodes[j].style.backgroundColor = 'green';
+	}
+	
+	
+if(nodes[j].value == 'yes'){
+	
+	nodes[j].style.backgroundColor = 'red';
+	
+	}
+    
+	
+	
+if(nodes[j].value == 'no update'){
+	
+	nodes[j].style.backgroundColor = 'white';
+	
+	
+	}
+	
+      }
+
+
+
+
+ /*   
+text.onfocus = function(){
+ 
+    if(text.value == 'type here'){
+    
+    text.value = '';
+    }
+};
+    
+    
+    text.onblur = function(){
+    
+    if (text.value == ''){
+    
+    text.value = 'type here';
+    
+    }
+    };
+  */  
+       
+    form.onclick = function(evt){
+ targeted =  evt.target.id;
+ };  
+
+
+form.onsubmit = function(evt){
+    
+submitCheck(xhr,inputElements,nodes,targeted);
+          
+     
+    return false;
+};
+
+};
+
+
+function submitCheck(xhr,inputElements,nodes,targeted){
+
+ var data = '';
+ var trueIdentity='';
+    var absData;
+
+  for (var k=0;k<inputElements.length;k++){ 
+ var num = inputElements[k];
+    if(nodes[num].checked){ 
+      if(nodes[num].name == targeted){
+     
+      trueIdentity = nodes[num].name;
+        data= nodes[num].value;
+        absData = trueIdentity + '/' + data +'/'+showName.value;
+            sendData(absData,xhr);
+        
+        }
+            }
+    }
+   
+
+}
+
+
+
+function sendData(data,xhr){
+    
+console.log(data);
+     var id = '56741123857';
+     xhr.open('POST','http://nodejs-adseeker.rhcloud.com/'+id,'true');
+       xhr.setRequestHeader("Content-Type", "plain/text;charset=UTF-8");
+   
+    
+       xhr.onreadystatechange = function(){
+      if(xhr.status==200 && xhr.readyState==4){
+	
+     console.log(xhr.responseText);
+     
+finalResult.innerHTML = '';
+finalResult.innerHTML += 'PROCESSING COMPLETE!!!';
+
+    }    
+};
+
+    
+    xhr.send(data);
+
+    finalResult.innerHTML = '' ;
+    finalResult.innerHTML +=  'DATA PROCESSING,PLEASE WAIT......';
+
+}
+
+
+
+</script>
+</body>
+</html>

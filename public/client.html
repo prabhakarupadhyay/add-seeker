@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="google-signin-client_id" content="28238042876-g9ogpu6l7ctpqg5rehe87mpbf5l7cahc.apps.googleusercontent.com">
+  <script src="https://apis.google.com/js/platform.js" async defer></script>  
+    
+    
+    <h1 id="headImage"><img id="mainHeadImage" src="logo2.png" alt="could not upload" height="150" width="500" ></h1>
+    <title>Ad Seeker</title>
+    <!--<link href="client.css" type="text/css" rel="stylesheet" -->
+    <style>
+        body{
+margin-left:20px;
+height:auto;
+width:auto;
+overflow:visible;
+    background: -webkit-linear-gradient(#437c17,#347235,#437c17,#347235);
+    background: -moz-linear-gradient(#437c17,#347235,#437c17,#347235);
+    background: -o-linear-gradient(#437c17,#347235,#437c17,#347235);
+
+}
+
+#mainBody{
+
+
+
+}
+
+
+
+#headImage{
+ text-align: center;
+background: -webkit-linear-gradient(#437c17,#437c17, #333);
+background: -moz-linear-gradient(#437c17,#437c17, #333);
+background: -o-linear-gradient(#437c17,#437c17, #333);
+  border-right: 5px double rgb(70,70,82);
+    border-bottom: 5px double rgb(70,70,82);
+margin-top:-7px; 
+margin-left: -20px;
+padding-bottom: 0px;
+width:auto;height:auto; 
+overflow:hidden; 
+margin-right: -8px;
+
+}
+
+.addImage{
+
+width: 100px;
+    height: 100px;
+    margin-left: 50px;
+
+}
+table{
+
+    border-spacing: 4em;
+  width: auto;
+   
+}
+tr,td{
+
+}
+
+td{
+font-size: 25px ;
+
+}
+
+.secData{
+
+font-family: Georgia, serif; 
+font-size: 30px;
+color:black;
+font-weight: 500;
+text-decoration: underline ;
+
+}
+
+ 
+#mainheadImage{
+
+margin-top: -20px;
+
+}
+
+
+
+div[class]:nth-child(odd){
+
+
+}
+
+
+div[class]:nth-child(even){
+
+
+}
+
+
+        
+        
+    </style>
+</head>
+<body>
+    <!--
+    <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '458246641043845',
+      xfbml      : true,
+      version    : 'v2.5'
+    });
+  };
+  
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+    <div
+  class="fb-like"
+  data-share="true"
+  data-width="450"
+  data-show-faces="true">
+</div>
+    -->
+    <script>
+  // This is called with the results from from FB.getLoginStatus().
+  function statusChangeCallback(response) {
+    console.log('statusChangeCallback');
+    console.log(response);
+    // The response object is returned with a status field that lets the
+    // app know the current login status of the person.
+    // Full docs on the response object can be found in the documentation
+    // for FB.getLoginStatus().
+    if (response.status === 'connected') {
+      // Logged into your app and Facebook.
+      testAPI();
+    } else if (response.status === 'not_authorized') {
+      // The person is logged into Facebook, but not your app.
+      document.getElementById('status').innerHTML = 'Please log ' +
+        'into this app.';
+    } else {
+      // The person is not logged into Facebook, so we're not sure if
+      // they are logged into this app or not.
+      document.getElementById('status').innerHTML = 'Please log ' +
+        'into Facebook.';
+    }
+  }
+
+  // This function is called when someone finishes with the Login
+  // Button.  See the onlogin handler attached to it in the sample
+  // code below.
+  function checkLoginState() {
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
+  }
+
+  window.fbAsyncInit = function() {
+  FB.init({
+    appId      : '458898987645277',
+    cookie     : true,  // enable cookies to allow the server to access 
+                        // the session
+    xfbml      : true,  // parse social plugins on this page
+    version    : 'v2.2' // use version 2.2
+  });
+
+  // Now that we've initialized the JavaScript SDK, we call 
+  // FB.getLoginStatus().  This function gets the state of the
+  // person visiting this page and can return one of three states to
+  // the callback you provide.  They can be:
+  //
+  // 1. Logged into your app ('connected')
+  // 2. Logged into Facebook, but not your app ('not_authorized')
+  // 3. Not logged into Facebook and can't tell if they are logged into
+  //    your app or not.
+  //
+  // These three cases are handled in the callback function.
+
+  FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+  });
+
+  };
+
+  // Load the SDK asynchronously
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+  // Here we run a very simple test of the Graph API after login is
+  // successful.  See statusChangeCallback() for when this call is made.
+  function testAPI() {
+    console.log('Welcome!  Fetching your information.... ');
+    FB.api('/me', function(response) {
+      console.log('Successful login for: ' + response.name);
+      document.getElementById('status').innerHTML =
+        'Thanks for logging in, ' + response.name + '!';
+    });
+  }
+  
+   
+function checkLoginState() {
+  FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+  });
+}
+
+
+
+</script>
+
+<!--
+  Below we include the Login Button social plugin. This button uses
+  the JavaScript SDK to present a graphical Login button that triggers
+  the FB.login() function when clicked.
+-->
+<fb:login-button v="2" size="medium" onlogin="window.location='http://nodejs-adseeker.rhcloud.com/';">
+</fb:login-button>
+
+
+
+<div class="g-signin2" data-onsuccess="onSignIn"></div>
+<script>
+function onSignIn(googleUser) {
+var id_token = googleUser.getAuthResponse().id_token;
+var xhr = new XMLHttpRequest();
+xhr.open('POST', 'http://nodejs-adseeker.rhcloud.com/tokensignin');
+xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+xhr.onload = function() {
+  console.log('Signed in as: ' + xhr.responseText);
+};
+xhr.send('idtoken=' + id_token);
+    
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail());
+}
+</script>
+
+
+
+
+<div id="status">
+</div>
+
+    
+    
+    
+    <div id="mainBody">
+        
+  <table>     
+<tr>
+<td><img alt="could not upload" src="http://vignette3.wikia.nocookie.net/logopedia/images/c/c4/Mq1.jpg/revision/latest?cb=20130324235552" class="addImage"></td>
+   <td class="secData">ZEE NEWS</td>
+ <td id ='zeenews' name='channel'></td>
+</tr>
+    <tr>
+   <td> <img alt="could not upload" src="http://www.exchange4media.com/storyimages/fs_53828.jpg" class="addImage"></td>
+        <td class="secData">INDIA TV</td>
+    <td id ='indiatv' name = 'channel'></td>
+</tr>
+     <tr>
+    <td><img alt="could not upload" src="http://www.customercarephonenumber.in/wp-content/uploads/2013/02/Aaj-Tak-Logo.jpg" class="addImage"></td>
+         <td class="secData">AAJ TAK</td>
+  <td id ='aajtak' name ='channel'></td>
+      </tr>
+         <tr>
+<td><img alt="could not upload" src="http://www.entertainmentdoor.com.pk/images/channel_image/thumb_150X150_colors-tv.jpg" class="addImage"></td>
+             <td class="secData">COLORS</td>
+   <td id ='colors' name ='channel'></td>
+</tr>
+<tr>         
+    <td><img alt="could not upload" src="http://madpoi.com/wp-content/uploads/2013/05/zee-tv-network-logo.jpg" class="addImage"></td>
+      <td class="secData">ZEE TV</td>
+    <td id ='zeetv' name ='channel'></td>
+</tr>
+ <tr>
+    <td><img alt="could not upload" src="http://www.newtvworld.com/Images/Sony-tv-Live-Streaming.png" class="addImage"></td>
+     <td class="secData">SONY</td>
+    <td id ='sony' name ='channel'></td>
+</tr>
+      <tr>
+          <td><img alt="could not upload" src="https://www.digitalworldz.co.uk/attachment.php?attachmentid=67170&stc=1&thumb=1&d=1390413998.png" class="addImage"></td><td class="secData">STAR PLUS</td>
+   <td id ='starplus' name ='channel'></td>
+</tr>
+    <tr>
+    <td><img alt="could not upload" src="http://www.afaqs.com/all/news/images/news_story_grfx/2015/01/43075/&TV%20Logo.jpg" class="addImage"></td><td class="secData">& TV</td>
+    <td id ='&tv' name ='channel'></td>
+</tr> 
+    <tr>
+    <td><img alt="could not upload" src="http://2.bp.blogspot.com/--TaPkh2mLH8/U0aEe_ABm3I/AAAAAAAACR4/xQWcXJbqB1Y/s1600/hbo_comedy_ceu.png" class="addImage"></td><td class="secData">STAR MOVIES</td>
+    <td id ='starmovies' name ='channel'></td>
+</tr>
+     <tr> 
+    <td><img alt="could not upload" src="https://www.homeboxoffice.com/lodging/img/hbo.jpg" class="addImage"></td><td class="secData">HBO</td>
+   <td id ='hbo' name ='channel'></td>
+</tr>
+<tr>
+    <td><img alt="could not upload" src="http://tvimages.burrp.com/images/channels2/movies/stargold.png" class="addImage"></td><td class="secData">STAR GOLD</td>
+  <td id ='stargold' name ='channel'></td>
+</tr>
+    <tr>    
+   <td> <img alt="could not upload" src="http://www.newtvworld.com/Images/Movies-OK-logo-300x212.jpg" class="addImage"></td><td class="secData">MOVIES OK</td>
+  <td id ='moviesok' name ='channel'></td>
+</tr> 
+ <tr>
+    <td><img alt="could not upload" src="http://tvimages.burrp.com/images/channels2/movies/&pictures.png" class="addImage"></td><td class="secData">& PICTURES</td>
+   <td id ='&pictures' name ='channel'></td>
+</tr>  
+      </table> 
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
+<footer id="foot">
+    <strong>
+         <script>
+             var bodyStyle = document.getElementById("mainBody");         
+             var foot=document.getElementById("foot");
+             var centre = bodyStyle.offsetWidth/2;
+             foot.style.marginLeft = centre-80 + 'px';
+             var date = new Date();
+             foot.innerHTML="copyright © "+ date.getFullYear()+" addseeker. ";
+        </script>
+    </strong>
+</footer>  
+<br>
+<script>
+    window.onload = function(){
+    var data;
+        
+    var livechannels = document.getElementsByName('channel');
+  
+    var es = new EventSource("/sse");
+    
+    es.onopen = function(event){  
+      console.log('event open ');
+    };
+    
+es.onmessage = function (event) {
+    data = event.data;
+  splitDataSearch(data,livechannels);
+};
+
+es.onerror = function(e) {
+  console.log("EventSource failed.");
+};
+
+    }
+
+    
+   
+
+function splitDataSearch(data,livechannels){
+    
+  console.log(data);
+ var dataSplit = data.split('/');
+
+    for(var i=0; i<livechannels.length;i++){
+            
+    if(livechannels[i].id == dataSplit[0]) { 
+       publish(livechannels,i,dataSplit);
+}
+    }
+}
+    
+    
+     function publish(livechannels,i,dataSplit){
+    if(dataSplit[1]=='no'){
+        livechannels[i].innerHTML='';
+livechannels[i].innerHTML += 'NO ADS';
+        livechannels[i].style.backgroundColor = '#00FF00';
+        livechannels[i].style.marginTop = '40px';
+         livechannels[i].style.display = "inline-block";
+       
+       
+    }
+        else if(dataSplit[1]=='yes'){
+           livechannels[i].innerHTML=''; 
+       livechannels[i].innerHTML += 'ADS'; 
+            livechannels[i].style.marginTop = '40px';
+              livechannels[i].style.backgroundColor = '#FF0000';
+            livechannels[i].style.display = "inline-block";
+        }
+        else{
+        livechannels[i].innerHTML=''; 
+       livechannels[i].innerHTML += 'NO UPDATE'; 
+             livechannels[i].style.backgroundColor = '';
+            livechannels[i].style.display = "";
+        
+        }
+   }
+    
+    
+</script>
+        
+</div>        
+</body>
+</html>
