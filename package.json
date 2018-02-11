@@ -16,7 +16,9 @@
       "socket.io":"*",
       "mysql":"*",
       "request":"*",
-      "passport-google-oauth":"*"
+      "passport-google-oauth":"*",
+      "mime":"*",
+      "path":"*"
       
   },
   "engine": {
